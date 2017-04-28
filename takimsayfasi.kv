@@ -1,0 +1,186 @@
+<TakimSayfasi>
+	
+	logo: _logo
+	takim: _takim
+	kod: _kod
+	sehir: _sehir
+	adres: _adres
+	baskan: _baskan
+	icsaha_1: _icsaha_1
+	icsaha_2: _icsaha_2
+	dissaha_1: _dissaha_1
+	dissaha_2: _dissaha_2
+	kaleci_1: _kaleci_1
+	kaleci_2: _kaleci_2
+	
+	
+	name: "takim_sayfasi"
+	
+	
+	ScrollView:
+		
+		pos_hint: {"x":0,"top":0.95}
+		
+		padding: 20
+		
+		spacing: 20
+		
+		BoxLayout:
+			
+			orientation: "vertical"
+			size_hint:1,None
+			height: 1500
+			spacing: 20
+		
+			BoxLayout:
+				
+				orientation: "vertical"
+				spacing: 0
+				
+				AsyncImage:
+					id: _logo
+					source: ""
+				
+				Label:
+					id: _takim
+					text: ""
+				
+			BoxLayout:
+				
+				orientation: "vertical"
+				spacing: 0
+				
+				BoxLayout:
+					
+					Label:
+				
+						text: "Kulüp Kodu"
+					
+					Label:
+						id: _kod
+						text: ""
+				
+				BoxLayout:
+				
+					Label:
+					
+						text: "Şehir:"
+					
+					
+					
+					Label:
+						
+						id: _sehir	
+						text: ""
+				
+				BoxLayout:
+					
+					spacing: 0
+					
+					Label:
+					
+						text: "Kulüp Adresi:"
+					
+					Label:
+						
+						id: _adres	
+						text: ""
+				
+				BoxLayout:
+					
+					spacing: 0
+					Label:
+					
+						text: "Kulüp Başkanı:"
+					
+					Label:
+						
+						id: _baskan	
+						text: ""
+			
+			GridLayout:
+				
+				cols: 3
+				
+				padding: 20
+				
+				size_hint: 1,None
+				
+				height: 700
+				
+				BoxLayout:
+					
+					orientation: "vertical"
+					
+					AsyncImage:
+						
+						id: _icsaha_1
+					
+					Label:
+						
+						text: "İç Saha - 1"
+				
+				BoxLayout:
+					
+					orientation: "vertical"
+					
+					AsyncImage:
+						
+						id: _icsaha_2
+					
+					Label:
+						text: "İç Saha - 2"
+				
+				BoxLayout:
+				
+					orientation: "vertical"
+					
+					AsyncImage:
+					
+						id: _dissaha_1
+					
+					Label:
+						
+						text: "Dış Saha - 1"
+				
+				BoxLayout:
+				
+					orientation: "vertical"
+				
+					AsyncImage:
+				
+						id: _dissaha_2
+					
+					Label:
+						
+						text: "Dış Saha - 2"
+				
+				BoxLayout:
+					
+					orientation: "vertical"
+					
+					AsyncImage:
+						
+						id: _kaleci_1
+					
+					Label:
+						
+						text: "Kaleci - 1"
+				
+				BoxLayout:
+					
+					orientation: "vertical"
+					
+					AsyncImage:
+					
+						id: _kaleci_2
+					
+					Label:
+						
+						text: "Kaleci - 2"
+					
+<TakimSayfasiGecis>:
+	
+	name: "takim_sayfasi_gecis"
+					
+		

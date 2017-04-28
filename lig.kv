@@ -1,0 +1,204 @@
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+#: import TakimSayfasi screen
+
+<EkranGecis>:
+
+	transition: SlideTransition()
+	GirisEkrani:
+	PuanEkrani:
+	HaftaninMaclari:
+	TakimSayfasiGecis:
+	TakimSayfasi:
+	
+	
+<GirisEkrani>:
+
+	name: "giris_ekrani"
+	
+	BoxLayout:
+		
+		padding: 10
+		spacing: 5
+		orientation: "vertical"
+		
+		BoxLayout:
+			
+			canvas:
+				
+				Color:
+				
+					rgba:0.2,0.7,0.2,0.5
+					
+				Rectangle:
+					
+					size: self.size
+					pos: self.pos
+					
+			orientation: "vertical"
+			size_hint: 1,1
+			pos_hint: {"center_x":0.5,"center_y":0.5}
+			halign: "center"
+			padding: 20
+			AsyncImage:
+				source: "giris.png"
+				size_hint: 1,1
+			
+		BoxLayout:
+		
+			orientation: "vertical"
+			size_hint: 0.5,0.5
+			pos_hint: {"center_x":0.5,"center_y":0.5}
+			
+	
+			Button:
+			
+				text: "Puan Durumu"
+				width: self.parent.width
+				on_release: 
+					app.root.transition = SlideTransition(direction = "left")
+					app.root.current = "puan_durumu"			
+			Button:
+			
+				text: "Haftanın Maçları"
+				width: self.parent.width
+				on_release: 
+					app.root.transition = SlideTransition(direction = "left")
+					app.root.current = "haftanin_maclari"
+
+				
+			Button:
+			
+				text: "Takımlar"
+				width: self.parent.width
+				on_release: 
+					app.root.transition = SlideTransition(direction = "left")
+					app.root.current = "takim_sayfasi_gecis"
+
+			
+			Button:
+			
+				text: "Çıkış"
+				width: self.parent.width
+				on_release: app.stop()			
+		
+			
+<PuanEkrani>:
+	
+	name: "puan_durumu"
+
+<HaftaninMaclari>:
+	
+	name: "haftanin_maclari"
+
+		
+<PuanTablo>:
+	
+		
+	cols: 9
+			
+	Label:
+		text: "TAKIM"
+		size_hint: 10,1
+		
+	Label:
+		text: "O"
+	
+	Label:
+		text: "G"
+	
+	Label:
+		text: "B"
+		
+	Label:
+		text: "M"
+		
+	Label:
+		text: "A"
+		
+	Label:
+		text: "Y"
+		
+	Label:
+		text: "AV"
+		
+	Label:
+		text: "P"
+
+<UstBolum>:
+	
+	button: _button
+	
+	size_hint: 1,0.05
+	padding: 5
+	pos_hint: {"x":0,"top":1}
+	canvas.before:
+			
+		Color:
+				
+			rgba: 1,0.23,0,1
+			
+		Rectangle:
+				
+			pos: self.pos
+				
+			size: self.size
+		
+	Button:
+		
+		id: _button
+		
+		pos_hint: {"x":0,"center_y":0.5}
+		
+		size_hint: None,None
+		size: 22,22
+		
+		background_normal: "geri_normal.png"
+		background_down: "geri_down.png"
+		
+		on_release: 
+			
+			app.root.transition = SlideTransition(direction = "right")
+			app.root.current = "giris_ekrani"
+
+<UstBolumGecis>:
+	
+	button: _button
+	
+	size_hint: 1,0.05
+	padding: 5
+	pos_hint: {"x":0,"top":1}
+	canvas.before:
+			
+		Color:
+				
+			rgba: 1,0.23,0,1
+			
+		Rectangle:
+				
+			pos: self.pos
+				
+			size: self.size
+		
+	Button:
+		
+		id: _button
+		
+		pos_hint: {"x":0,"center_y":0.5}
+		
+		size_hint: None,None
+		size: 22,22
+		
+		background_normal: "geri_normal.png"
+		background_down: "geri_down.png"
+		
+		on_release: 
+			
+			app.root.transition = SlideTransition(direction = "right")
+			app.root.current = "takim_sayfasi_gecis"
+			
+		
+
+
+	
+	
+	
